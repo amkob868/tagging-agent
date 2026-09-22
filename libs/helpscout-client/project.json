@@ -1,0 +1,22 @@
+{
+  "name": "helpscout-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/helpscout-client/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/helpscout-client",
+        "main": "libs/helpscout-client/src/index.ts",
+        "tsConfig": "libs/helpscout-client/tsconfig.lib.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": false,
+        "external": ["@aws-sdk/*"],
+        "declaration": true
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@support-agent-aws/shared": ["libs/shared/src/index.ts"],
+      "@support-agent-aws/helpscout-client": ["libs/helpscout-client/src/index.ts"],
+      "@support-agent-aws/acme-client": ["libs/acme-client/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

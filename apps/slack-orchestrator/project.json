@@ -1,0 +1,23 @@
+{
+  "name": "slack-orchestrator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/slack-orchestrator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/slack-orchestrator",
+        "main": "apps/slack-orchestrator/src/index.ts",
+        "tsConfig": "apps/slack-orchestrator/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "thirdParty": true,
+        "minify": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}

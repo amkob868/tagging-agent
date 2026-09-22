@@ -1,0 +1,23 @@
+{
+  "name": "note-creator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/note-creator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/note-creator",
+        "main": "apps/note-creator/src/index.ts",
+        "tsConfig": "apps/note-creator/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "thirdParty": true,
+        "minify": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "acme-lookup",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/acme-lookup/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/acme-lookup",
+        "main": "apps/acme-lookup/src/index.ts",
+        "tsConfig": "apps/acme-lookup/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "minify": true,
+        "thirdParty": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}

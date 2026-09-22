@@ -1,0 +1,23 @@
+{
+  "name": "integration-fetcher",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/integration-fetcher/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/integration-fetcher",
+        "main": "apps/integration-fetcher/src/index.ts",
+        "tsConfig": "apps/integration-fetcher/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "thirdParty": true,
+        "minify": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}

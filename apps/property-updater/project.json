@@ -1,0 +1,23 @@
+{
+  "name": "property-updater",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/property-updater/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/property-updater",
+        "main": "apps/property-updater/src/index.ts",
+        "tsConfig": "apps/property-updater/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "thirdParty": true,
+        "minify": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}

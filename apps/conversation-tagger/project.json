@@ -1,0 +1,23 @@
+{
+  "name": "conversation-tagger",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/conversation-tagger/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/conversation-tagger",
+        "main": "apps/conversation-tagger/src/index.ts",
+        "tsConfig": "apps/conversation-tagger/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "thirdParty": true,
+        "minify": true,
+        "external": ["@aws-sdk/*"]
+      }
+    }
+  }
+}
